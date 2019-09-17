@@ -123,10 +123,10 @@ When you report USB issues, please attach relevant debug log from running the pr
     cd depends/
     .\install_libusb_vs2013.cmd
     ```
-    Or `install_libusb_vs2015.cmd`. If you see some errors, you can always open the cmd files and follow the git commands, and maybe build `libusb_201x.sln` with Visual Studio by hand. Building with "Win32" is not recommended as it results in lower performance.
+    Or `install_libusb_vs201x.cmd`. If you see some errors, you can always open the cmd files and follow the git commands, and maybe build `libusb_201x.sln` with Visual Studio by hand. Building with "Win32" is not recommended as it results in lower performance.
 * Install TurboJPEG
 
-    Download from http://sourceforge.net/projects/libjpeg-turbo/files, extract it to `c:\libjpeg-turbo64` or `depends/libjpeg-turbo64`, or anywhere as specified by the environment variable `TurboJPEG_ROOT`.
+    Download **libjpeg-turbo-*-vc64.exe** from http://sourceforge.net/projects/libjpeg-turbo/files, extract it to `c:\libjpeg-turbo64` or `depends/libjpeg-turbo64`, or anywhere as specified by the environment variable `TurboJPEG_ROOT`.
 * Install GLFW
 
     Download from http://www.glfw.org/download.html (64-bit), extract as `depends/glfw` (rename `glfw-3.x.x.bin.WIN64` to `glfw`), or anywhere as specified by the environment variable `GLFW_ROOT`.
@@ -145,7 +145,8 @@ When you report USB issues, please attach relevant debug log from running the pr
     cmake .. -G "Visual Studio 12 2013 Win64"
     cmake --build . --config RelWithDebInfo --target install
     ```
-    Or `-G "Visual Studio 14 2015 Win64"`.
+    Or `cmake .. -G "Visual Studio 14 2015 Win64"`.
+    If you use VS2019, shoot `cmake .. -A x64`.
 * Run the test program: `.\install\bin\Protonect.exe`, or start debugging in Visual Studio.
 * Test OpenNI2 (optional)
 
